@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "whatsapp-mcp-server"
+version = "0.1.0"
+description = "WhatsApp MCP server with Web UI"
+requires-python = ">=3.11"
+py-modules = ["whatsapp", "api_server", "audio", "main"]
+dependencies = [
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.6.0",
+    "requests>=2.32.3",
+    "fastapi>=0.111.0",
+    "uvicorn[standard]>=0.30.0",
+]
+
+[project.scripts]
+whatsapp-mcp-api="api_server:app"
